@@ -1,0 +1,44 @@
+C:\Users\HP\RiderProjects\StudentsAPI\Students APP\bin\Debug\net7.0\appsettings.Development.json
+C:\Users\HP\RiderProjects\StudentsAPI\Students APP\bin\Debug\net7.0\appsettings.json
+C:\Users\HP\RiderProjects\StudentsAPI\Students APP\bin\Debug\net7.0\Students APP.exe
+C:\Users\HP\RiderProjects\StudentsAPI\Students APP\bin\Debug\net7.0\Students APP.deps.json
+C:\Users\HP\RiderProjects\StudentsAPI\Students APP\bin\Debug\net7.0\Students APP.runtimeconfig.json
+C:\Users\HP\RiderProjects\StudentsAPI\Students APP\bin\Debug\net7.0\Students APP.dll
+C:\Users\HP\RiderProjects\StudentsAPI\Students APP\bin\Debug\net7.0\Students APP.pdb
+C:\Users\HP\RiderProjects\StudentsAPI\Students APP\bin\Debug\net7.0\Humanizer.dll
+C:\Users\HP\RiderProjects\StudentsAPI\Students APP\bin\Debug\net7.0\Microsoft.AspNetCore.OpenApi.dll
+C:\Users\HP\RiderProjects\StudentsAPI\Students APP\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.dll
+C:\Users\HP\RiderProjects\StudentsAPI\Students APP\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\HP\RiderProjects\StudentsAPI\Students APP\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.Design.dll
+C:\Users\HP\RiderProjects\StudentsAPI\Students APP\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Users\HP\RiderProjects\StudentsAPI\Students APP\bin\Debug\net7.0\Microsoft.Extensions.DependencyModel.dll
+C:\Users\HP\RiderProjects\StudentsAPI\Students APP\bin\Debug\net7.0\Microsoft.OpenApi.dll
+C:\Users\HP\RiderProjects\StudentsAPI\Students APP\bin\Debug\net7.0\Mono.TextTemplating.dll
+C:\Users\HP\RiderProjects\StudentsAPI\Students APP\bin\Debug\net7.0\MySqlConnector.dll
+C:\Users\HP\RiderProjects\StudentsAPI\Students APP\bin\Debug\net7.0\Newtonsoft.Json.dll
+C:\Users\HP\RiderProjects\StudentsAPI\Students APP\bin\Debug\net7.0\Pomelo.EntityFrameworkCore.MySql.dll
+C:\Users\HP\RiderProjects\StudentsAPI\Students APP\bin\Debug\net7.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\HP\RiderProjects\StudentsAPI\Students APP\bin\Debug\net7.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\HP\RiderProjects\StudentsAPI\Students APP\bin\Debug\net7.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\HP\RiderProjects\StudentsAPI\Students APP\bin\Debug\net7.0\System.CodeDom.dll
+C:\Users\HP\RiderProjects\StudentsAPI\Students APP\obj\Debug\net7.0\Students APP.csproj.AssemblyReference.cache
+C:\Users\HP\RiderProjects\StudentsAPI\Students APP\obj\Debug\net7.0\Students APP.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\HP\RiderProjects\StudentsAPI\Students APP\obj\Debug\net7.0\Students APP.AssemblyInfoInputs.cache
+C:\Users\HP\RiderProjects\StudentsAPI\Students APP\obj\Debug\net7.0\Students APP.AssemblyInfo.cs
+C:\Users\HP\RiderProjects\StudentsAPI\Students APP\obj\Debug\net7.0\Students APP.csproj.CoreCompileInputs.cache
+C:\Users\HP\RiderProjects\StudentsAPI\Students APP\obj\Debug\net7.0\Students APP.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\HP\RiderProjects\StudentsAPI\Students APP\obj\Debug\net7.0\Students APP.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\HP\RiderProjects\StudentsAPI\Students APP\obj\Debug\net7.0\staticwebassets\msbuild.Students APP.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\HP\RiderProjects\StudentsAPI\Students APP\obj\Debug\net7.0\staticwebassets\msbuild.build.Students APP.props
+C:\Users\HP\RiderProjects\StudentsAPI\Students APP\obj\Debug\net7.0\staticwebassets\msbuild.buildMultiTargeting.Students APP.props
+C:\Users\HP\RiderProjects\StudentsAPI\Students APP\obj\Debug\net7.0\staticwebassets\msbuild.buildTransitive.Students APP.props
+C:\Users\HP\RiderProjects\StudentsAPI\Students APP\obj\Debug\net7.0\staticwebassets.pack.json
+C:\Users\HP\RiderProjects\StudentsAPI\Students APP\obj\Debug\net7.0\staticwebassets.build.json
+C:\Users\HP\RiderProjects\StudentsAPI\Students APP\obj\Debug\net7.0\staticwebassets.development.json
+C:\Users\HP\RiderProjects\StudentsAPI\Students APP\obj\Debug\net7.0\scopedcss\bundle\Students APP.styles.css
+C:\Users\HP\RiderProjects\StudentsAPI\Students APP\obj\Debug\net7.0\Students APP.csproj.CopyComplete
+C:\Users\HP\RiderProjects\StudentsAPI\Students APP\obj\Debug\net7.0\Students APP.dll
+C:\Users\HP\RiderProjects\StudentsAPI\Students APP\obj\Debug\net7.0\refint\Students APP.dll
+C:\Users\HP\RiderProjects\StudentsAPI\Students APP\obj\Debug\net7.0\Students APP.pdb
+C:\Users\HP\RiderProjects\StudentsAPI\Students APP\obj\Debug\net7.0\Students APP.genruntimeconfig.cache
+C:\Users\HP\RiderProjects\StudentsAPI\Students APP\obj\Debug\net7.0\ref\Students APP.dll
