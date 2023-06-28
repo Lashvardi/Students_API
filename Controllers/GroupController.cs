@@ -19,11 +19,11 @@ public class GroupController : Controller
     // Get All Groups With Course Name
     [HttpGet]
     [Route("WithCourseName")]
-    public async Task<ActionResult<IEnumerable<GroupGetDTO>>> GetGroups()
+    public async Task<ActionResult<IEnumerable<GroupGetDto>>> GetGroups()
     {
         return await _context.Groups
             .Include(group => group.Course) // Include the Course navigation property
-            .Select(group => new GroupGetDTO
+            .Select(group => new GroupGetDto
             {
                 GroupId = group.Id,
                 GroupName = group.GroupName,
@@ -65,11 +65,12 @@ public class GroupController : Controller
     
     // Adding Group With Course
     [HttpPost]
+    [Route("CreateWithCourse")]
     public async Task<ActionResult<Group>> PostGroup(GroupCreateDto groupDto)
     {
         var group = new Group
         {
-            GroupName = groupDto.GroupName,
+            GroupName = Group.GenerateGroupName(),
             CourseId = groupDto.CourseId,
         };
 
@@ -78,6 +79,7 @@ public class GroupController : Controller
 
         return CreatedAtAction("PostGroup", new { id = group.Id }, group);
     }
+
 
 
 }

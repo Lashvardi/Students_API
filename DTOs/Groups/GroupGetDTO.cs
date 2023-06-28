@@ -1,6 +1,6 @@
 ﻿namespace Students_APP.DTOs;
 
-public class GroupGetDTO
+public class GroupGetDto
 {
     public int GroupId { get; set; }
     public string GroupName { get; set; }
