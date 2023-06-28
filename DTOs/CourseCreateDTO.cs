@@ -1,6 +1,6 @@
 ﻿namespace Students_APP.DTOs;
 
-public class CourseCreateDTO
+public class CourseCreateDto
 {
     public string CourseName { get; set; }
 }

@@ -17,29 +17,28 @@ public class CourseController : Controller
     {
         _context = context;
     }
-
+    
+    // Retrieve All Course Names
     [HttpGet]
-    public async Task<ActionResult<IEnumerable<Course>>> GetCourses()
+    public async Task<ActionResult<IEnumerable<CourseCreateDto>>> GetCourses()
+    {
+        return await _context.Courses.Select(course => new CourseCreateDto
+        {
+            CourseName = course.CourseName,
+        }).ToListAsync();
+    }
+    
+    
+    [HttpGet]
+    [Route("FullInfo")]
+    public async Task<ActionResult<IEnumerable<Course>>> GetFullCourseInfo()
     {
         return await _context.Courses.ToListAsync();
     }
 
-    [HttpGet("{id}")]
-    public async Task<ActionResult<Course>> GetCourse(string id)
-    {
-        var course = await _context.Courses.FindAsync(id);
-
-        if (course == null)
-        {
-            return NotFound();
-        }
-
-        return course;
-    }
-
     // Todo: Create Endpoint For Adding Group To Course And Student
     [HttpPost]
-    public async Task<ActionResult<Course>> PostCourse(CourseCreateDTO courseDto)
+    public async Task<ActionResult<Course>> PostCourse(CourseCreateDto courseDto)
     {
         var course = new Course
         {
@@ -49,37 +48,7 @@ public class CourseController : Controller
         _context.Courses.Add(course);
         await _context.SaveChangesAsync();
 
-        return CreatedAtAction("GetCourse", new { id = course.Id }, course);
+        return CreatedAtAction("PostCourse", new { id = course.Id }, course);
     }
-
-
-    [HttpPut("{id}")]
-    public async Task<IActionResult> PutCourse(int id, Course course)
-    {
-        if (id != course.Id)
-        {
-            return BadRequest();
-        }
-
-        _context.Entry(course).State = EntityState.Modified;
-        await _context.SaveChangesAsync();
-
-        return NoContent();
-    }
-
-
-    [HttpDelete("{id}")]
-    public async Task<IActionResult> DeleteCourse(string id)
-    {
-        var course = await _context.Courses.FindAsync(id);
-        if (course == null)
-        {
-            return NotFound();
-        }
-
-        _context.Courses.Remove(course);
-        await _context.SaveChangesAsync();
-
-        return NoContent();
-    }
+    
 }

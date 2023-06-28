@@ -12,4 +12,5 @@ public class Student
         
     public ICollection<StudentGroup> StudentGroups { get; set; }
     public ICollection<StudentCourse> StudentCourses { get; set; }
+    public ICollection<FinalProject> StudentFinalProjects { get; set; }
 }

@@ -12,6 +12,14 @@ public class DataContext : DbContext
     public DbSet<Course> Courses { get; set; }
     public DbSet<Student> Students { get; set; }
     public DbSet<Group> Groups { get; set; }
+    
+    public DbSet<FinalProject> FinalProjects { get; set; }
+    
+    public DbSet<StudentGroup> StudentGroups { get; set; }
+    
+    public DbSet<StudentCourse> StudentCourses { get; set; }
+    
+    
 
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
