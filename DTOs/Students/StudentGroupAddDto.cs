@@ -4,4 +4,5 @@ public class StudentGroupAddDto
 {
     public string StudentGuid { get; set; }
     public int GroupId { get; set; }
+    
 }

@@ -17,6 +17,7 @@ public class StudentController : Controller
         _context = context;
     }
     
+    // Get All Students With Group and Course Name
     [HttpGet]
     public async Task<ActionResult<IEnumerable<StudentGetDto>>> GetStudents()
     {
@@ -32,6 +33,7 @@ public class StudentController : Controller
         }).ToListAsync();
     }
     
+    // Adding A Student
     [HttpPost]
     public async Task<ActionResult<Student>> PostStudent(StudentCreateDto studentDto)
     {
@@ -50,20 +52,44 @@ public class StudentController : Controller
         return CreatedAtAction("PostStudent", new { id = student.Guid }, student);
     }
     
-    // Assign Student To Group
+    // Assign Student To Group and Course
     [HttpPost]
     [Route("AddToGroup")]
-    public async Task<ActionResult<StudentGroup>> AddStudentToGroup(StudentGroupAddDto studentGroupDto)
+    public async Task<ActionResult<StudentGroupResultDto>> AddStudentToGroup(StudentGroupAddDto studentGroupDto)
     {
+        var group = await _context.Groups
+            .SingleOrDefaultAsync(g => g.Id == studentGroupDto.GroupId);
+        if (group == null)
+        {
+            return NotFound();
+        }
+
         var studentGroup = new StudentGroup
         {
             StudentGuid = studentGroupDto.StudentGuid,
-            GroupId = studentGroupDto.GroupId
+            GroupId = studentGroupDto.GroupId,
         };
 
         _context.StudentGroups.Add(studentGroup);
+
+        // Use the CourseId from the Group to create the StudentCourse
+        var studentCourse = new StudentCourse
+        {
+            StudentGuid = studentGroupDto.StudentGuid,
+            CourseId = group.CourseId, // Set CourseId from the group
+        };
+
+        _context.StudentCourses.Add(studentCourse);
         await _context.SaveChangesAsync();
 
-        return CreatedAtAction(nameof(AddStudentToGroup), new { id = studentGroup.GroupId }, studentGroup);
+        var result = new StudentGroupResultDto
+        {
+            StudentGuid = studentGroup.StudentGuid,
+            GroupId = studentGroup.GroupId
+        };
+
+        return CreatedAtAction(nameof(AddStudentToGroup), new { id = studentGroup.GroupId }, result);
     }
+
+
 }

@@ -16,13 +16,16 @@ public class GroupController : Controller
         _context = context;
     }
     
+    // Get All Groups With Course Name
     [HttpGet]
+    [Route("WithCourseName")]
     public async Task<ActionResult<IEnumerable<GroupGetDTO>>> GetGroups()
     {
         return await _context.Groups
             .Include(group => group.Course) // Include the Course navigation property
             .Select(group => new GroupGetDTO
             {
+                GroupId = group.Id,
                 GroupName = group.GroupName,
                 CourseId = group.CourseId,
                 CourseName = group.Course.CourseName // Include the CourseName property from the Course entity
@@ -30,13 +33,44 @@ public class GroupController : Controller
             .ToListAsync();
     }
     
+    // Get All Groups With Students And Course Names
+    [HttpGet]
+    [Route("WithStudents")]
+    public async Task<ActionResult<IEnumerable<GroupWithStudents>>> GetGroupsWithStudents()
+    {
+        return await _context.Groups
+            .Include(group => group.Course)
+            .Include(group => group.StudentGroups)
+            .ThenInclude(studentGroup => studentGroup.Student)
+            .Select(group => new GroupWithStudents
+            {
+                GroupId = group.Id,
+                GroupName = group.GroupName,
+                CourseId = group.CourseId,
+                CourseName = group.Course.CourseName,
+                Students = group.StudentGroups.Select(studentGroup => new StudentGetDto
+                {
+                    Guid = studentGroup.Student.Guid,
+                    FullName = studentGroup.Student.FullName,
+                    Email = studentGroup.Student.Email,
+                    Phone = studentGroup.Student.Phone,
+                    Address = studentGroup.Student.Address,
+                    GroupName = studentGroup.Group.GroupName,
+                    CourseName = studentGroup.Group.Course.CourseName
+                }).ToList()
+            })
+            .ToListAsync();
+    }
+    
+    
+    // Adding Group With Course
     [HttpPost]
     public async Task<ActionResult<Group>> PostGroup(GroupCreateDto groupDto)
     {
         var group = new Group
         {
             GroupName = groupDto.GroupName,
-            CourseId = groupDto.CourseId
+            CourseId = groupDto.CourseId,
         };
 
         _context.Groups.Add(group);

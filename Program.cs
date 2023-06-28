@@ -18,8 +18,8 @@ builder.Services.AddCors(options =>
 
 builder.Services.AddControllers();
 builder.Services.AddDbContext<DataContext>(options =>
-    options.UseMySql("server=localhost;user=root;password=;database=projectsapi;",
-        ServerVersion.AutoDetect("server=localhost;user=root;password=;database=projectsapi;")));
+    options.UseMySql("server=localhost;user=root;password=admin;database=projectsapi;",
+        ServerVersion.AutoDetect("server=localhost;user=root;password=admin;database=projectsapi;")));
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();

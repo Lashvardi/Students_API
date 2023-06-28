@@ -18,25 +18,18 @@ public class CourseController : Controller
         _context = context;
     }
     
-    // Retrieve All Course Names
     [HttpGet]
-    public async Task<ActionResult<IEnumerable<CourseCreateDto>>> GetCourses()
+    [Route("WithId")]
+    public async Task<ActionResult<IEnumerable<CourseWithId>>> GetFullCourseInfo()
     {
-        return await _context.Courses.Select(course => new CourseCreateDto
+        return await _context.Courses.Select(Course => new CourseWithId
         {
-            CourseName = course.CourseName,
+            CourseId = Course.Id,
+            CourseName = Course.CourseName,
         }).ToListAsync();
     }
-    
-    
-    [HttpGet]
-    [Route("FullInfo")]
-    public async Task<ActionResult<IEnumerable<Course>>> GetFullCourseInfo()
-    {
-        return await _context.Courses.ToListAsync();
-    }
 
-    // Todo: Create Endpoint For Adding Group To Course And Student
+    // Adding Course With Course Name
     [HttpPost]
     public async Task<ActionResult<Course>> PostCourse(CourseCreateDto courseDto)
     {
@@ -51,4 +44,6 @@ public class CourseController : Controller
         return CreatedAtAction("PostCourse", new { id = course.Id }, course);
     }
     
+    
+
 }
