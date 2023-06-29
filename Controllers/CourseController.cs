@@ -45,5 +45,54 @@ public class CourseController : Controller
     }
     
     
+    [HttpGet]
+    [Route("WithGroups")]
+    public async Task<ActionResult<IEnumerable<CourseWithGroupInfo>>> GetCoursesWithGroupInfo()
+    {
+        return await _context.Courses
+            .Include(course => course.Groups)
+            .ThenInclude(group => group.StudentGroups) // Include StudentGroups to get student count per group
+            .Select(course => new CourseWithGroupInfo
+            {
+                CourseId = course.Id,
+                CourseName = course.CourseName,
+                GroupInfos = course.Groups.Select(group => new GroupNameWithId
+                {
+                    GroupId = group.Id,
+                    GroupName = group.GroupName,
+                    NumberOfStudents = group.StudentGroups.Count // Get the number of students in the group
+                }).ToList()
+            })
+            .ToListAsync();
+    }
+    
+    
+    // Get Groups With Course Name
+    [HttpGet]
+    [Route("WithCourseName")]
+    public async Task<ActionResult<IEnumerable<CourseWithGroupInfo>>> GetCoursesWithGroupInfoWithCourseName(string CourseName)
+    {
+        return await _context.Courses
+            .Include(course => course.Groups)
+            .ThenInclude(group => group.StudentGroups) // Include StudentGroups to get student count per group
+            .Where(course => course.CourseName == CourseName)
+            .Select(course => new CourseWithGroupInfo
+            {
+                CourseId = course.Id,
+                CourseName = course.CourseName,
+                GroupInfos = course.Groups.Select(group => new GroupNameWithId
+                {
+                    GroupId = group.Id,
+                    GroupName = group.GroupName,
+                    NumberOfStudents = group.StudentGroups.Count // Get the number of students in the group
+                }).ToList()
+            })
+            .ToListAsync();
+    }
+
+
+
+
+
 
 }

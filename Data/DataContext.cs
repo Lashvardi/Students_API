@@ -20,6 +20,8 @@ public class DataContext : DbContext
     public DbSet<StudentCourse> StudentCourses { get; set; }
     
     
+    
+    // Todo: Implement Student Having Many Groups And Many Courses
 
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)

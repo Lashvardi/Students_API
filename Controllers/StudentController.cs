@@ -52,6 +52,7 @@ public class StudentController : Controller
         return CreatedAtAction("PostStudent", new { id = student.Guid }, student);
     }
     
+    
     // Assign Student To Group and Course
     [HttpPost]
     [Route("AddToGroup")]
